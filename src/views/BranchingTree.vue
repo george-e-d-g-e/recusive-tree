@@ -39,7 +39,8 @@ export default defineComponent({
 
   /* dat.gui */
   .dg {
-    // display: none;
+    /* hide the gui */
+    display: none;
     &.a {
       float: left;
     }

@@ -5,8 +5,9 @@ import createTree from './tree'
 // allow external updates
 type Update = {
   (): void;
-} 
+}
 let forceUpdate: undefined | Update = undefined
+let insertUser: any = undefined
 
 const createSketch = (gui: any): p5 => {
 
@@ -54,6 +55,11 @@ const createSketch = (gui: any): p5 => {
     // forceUpdate
     forceUpdate = () => { updateTree() }
 
+    let userAccount: any = null
+    insertUser = (account: any) => {
+      userAccount = account
+    }
+
     p.setup = () => {
       p.createCanvas(p.windowWidth, p.windowHeight)
 
@@ -75,6 +81,7 @@ const createSketch = (gui: any): p5 => {
     }
 
     p.draw = () => {
+      // p.text("user: " + userAccount, 10, 10)
       p.push()
         p.translate(p.width / 2, p.height - 10)
         tree.drawList.animate()
@@ -90,4 +97,4 @@ const createSketch = (gui: any): p5 => {
   return new p5(sketch)
 }
 
-export { createSketch, forceUpdate }
+export { createSketch, forceUpdate, insertUser }

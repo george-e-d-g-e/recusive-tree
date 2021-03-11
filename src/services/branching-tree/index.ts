@@ -2,7 +2,7 @@
 
 import p5 from 'p5'
 import createGui from './gui'
-import { createSketch, forceUpdate } from './sketch'
+import { createSketch, forceUpdate, insertUser } from './sketch'
 import { BranchTemplate } from './types'
 import * as Comlink from 'comlink'
 
@@ -41,14 +41,19 @@ const create = () => {
         }
       }
 
+      const injectUserInfo = (user: any) => {
+        // console.log("from iframe", user.name)
+        insertUser(user.name)
+      }
+
       return {
         getOptions,
-        updateOption
+        updateOption,
+        injectUserInfo
       }
     }
 
     const exposedOptions = createExposedOptions(options, forceUpdate)
-    console.log("exposed", exposedOptions)
     Comlink.expose(exposedOptions, Comlink.windowEndpoint(window.parent))
     // update gui on change
     gui.listen()
