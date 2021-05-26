@@ -49,6 +49,7 @@ const createSketch = (gui: any): p5 => {
 
     const updateTree = () => {
       tree.branches.update(gui.getBranchTemplate())
+      generateNewTree()
       render()
     }
 
