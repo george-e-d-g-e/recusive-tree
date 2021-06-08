@@ -77,6 +77,8 @@ export const createComsForArtwork = () => {
       return
 
     window.addEventListener('message', (event) => {
+      console.log("event", event.origin, targetOrigin)
+      console.log('match',  (event.origin === targetOrigin))
       if(event.origin !== targetOrigin)
         return
 
