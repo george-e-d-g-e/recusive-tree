@@ -5,7 +5,7 @@
 
 <script lang="ts">
 import { defineComponent, onUnmounted } from 'vue';
-import createBranchingTree from "@/services/branching-tree";
+import createBranchingTree from "@/services/branching-tree/indexV2";
 
 export default defineComponent({
   name: 'BranchingTree',
