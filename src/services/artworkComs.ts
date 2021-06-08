@@ -59,7 +59,7 @@ export const createComsForPlatform = (targetRef: any, targetOrigin: any) => {
 export const createComsForArtwork = () => {
 
   const targetWindow = window.parent
-  const targetOrigin = (location.hostname === 'localhost') ? 'http://localhost:8080' : 'https://olta.art'
+  const targetOrigin = (location.hostname === 'localhost') ? 'http://localhost:8080' : 'https://olta-demo-evnm8jtq9-e-d-g-e.vercel.app/'
 
   let saveHandler = (data: any) => console.log('no save handler set', data)
   let loadHandler =  (data: any) => console.log('no load handler set', data)
